@@ -1,52 +1,55 @@
-# Task Management App
+# To Do List App
 
-## Introduction
-Welcome to the Task Management App! This simple Python application helps you manage your daily tasks efficiently. You can add, update, delete, and view tasks seamlessly.
+A simple Task Manager App built with Python and Tkinter that allows you to manage your tasks efficiently. The app supports adding, deleting, editing, marking tasks as completed, saving and loading tasks from a file, toggling dark mode, and adding tasks using voice input.
 
 ## Features
-- Add tasks
-- Update tasks
-- Delete tasks
-- View tasks
 
-## How to Use
-1. Run the script.
-2. Enter the total number of tasks you want to add initially.
-3. Follow the on-screen instructions to manage your tasks.
+- Add a new task
+- Delete a task
+- Edit a task
+- Mark a task as completed
+- Save tasks to a file
+- Load tasks from a file
+- Clear all tasks
+- Toggle dark mode
+- Add task using voice input
 
-## Code Explanation
-The `task()` function performs the following operations:
-1. Initializes an empty list to store tasks.
-2. Prompts the user to enter the total number of initial tasks.
-3. Provides a menu to add, update, delete, and view tasks.
+## Requirements
 
+- Python 3.x
+- Tkinter (usually included with Python)
+- `speech_recognition` library
+- `pyaudio` library (for voice input)
 
+## Installation
 
+1. Clone the repository or download the source code.
+2. Install the required libraries using pip:
+    ```sh
+    pip install speechrecognition pyaudio
+    ```
+3. Run the `app.py` file:
+    ```sh
+    python app.py
+    ```
 
-## Example
-def task(): tasks = [] print("----- Welcome to the Task Management App -----")
+## Usage
 
-total_task = int(input("Enter the total number of tasks you want to add: ")) for i in range(total_task): task_name = input(f"Enter the task {i}: ") tasks.append(task_name)
+1. **Add Task**: Enter a task in the entry field and click "Add Task".
+2. **Delete Task**: Select a task from the list and click "Delete Task".
+3. **Edit Task**: Select a task from the list, enter the new task in the entry field, and click "Edit Task".
+4. **Mark Completed**: Select a task from the list and click "Mark Completed".
+5. **Save Tasks**: Click "Save Tasks" to save the current tasks to a file.
+6. **Load Tasks**: Click "Load Tasks" to load tasks from a file.
+7. **Clear Tasks**: Click "Clear Tasks" to clear all tasks from the list.
+8. **Toggle Dark Mode**: Click "Toggle Dark Mode" to switch between light and dark mode.
+9. **Add Task by Voice**: Click "Add Task by Voice" and speak the task to add it using voice input.
 
-print(f"Today's tasks are: \n {tasks}")
+## File Structure
 
-while True: 
-operation = int(input("Enter 1-Add\n2-Update\n3-Delete\n4-View\n5-Exit\n"))
-if operation == 1: 
-add = input("Enter task you want to add: ")
-tasks.append(add) 
-print(f"Task {add} has been added to the list: {tasks}")
-elif operation == 2: 
-update = input("Enter task you want to update: ") 
-update_index = tasks.index(update) new_task = input("Enter the new task: ") 
-tasks[update_index] = new_task 
-print(f"Task {update} has been updated to the list: {tasks}") 
-elif operation == 3: 
-delete = input("Enter task you want to delete: ") 
-tasks.remove(delete) 
-print(f"Task {delete} has been deleted from the list: {tasks}") 
-elif operation == 4: 
-print(f"Today's tasks are: \n {tasks}") 
-elif operation == 5: 
-break else: 
-print("Invalid Input: Please enter a valid input from 1-5")
+- [app.py](http://_vscodecontentref_/0): The main application file.
+- [tasks.json](http://_vscodecontentref_/1): The file where tasks are saved (created automatically).
+
+## License
+
+This project is licensed under the MIT License.
